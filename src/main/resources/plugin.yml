@@ -1,0 +1,11 @@
+name: FruitBedrockMenus
+version: '1.0-SNAPSHOT'
+main: core.craft.FruitBedrockMenus
+api-version: '1.21'
+commands:
+  bedrockmenus:
+    description: Reload Bedrock redirect config
+    usage: /bedrockmenus reload
+    permission: bedrockmenus.reload
+
+

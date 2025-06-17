@@ -1,0 +1,4 @@
+commands:
+  selector: "deluxeforms open serverselector"
+  island: "deluxeforms open islandmenu"
+  island top: "deluxeforms open islandtop"
