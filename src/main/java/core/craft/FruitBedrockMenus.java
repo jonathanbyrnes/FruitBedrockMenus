@@ -15,8 +15,9 @@ public final class FruitBedrockMenus extends JavaPlugin {
         loadRedirectConfig();
 
         getCommand("bedrockmenus").setExecutor(new BedrockMenusCommand(this));
-        getServer().getPluginManager().registerEvents(new RedirectListener(redirectConfig), this);
+        getServer().getPluginManager().registerEvents(new RedirectListener(() -> redirectConfig), this);
     }
+
 
     public void loadRedirectConfig() {
         reloadConfig();

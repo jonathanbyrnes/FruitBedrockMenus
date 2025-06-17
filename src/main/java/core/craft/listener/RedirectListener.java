@@ -1,16 +1,17 @@
-package core.craft.listener;
+package com.example.bedrockredirect;
 
-import core.craft.config.CommandRedirectConfig;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 
-public class RedirectListener implements Listener {
-    private final CommandRedirectConfig config;
+import java.util.function.Supplier;
 
-    public RedirectListener(CommandRedirectConfig config) {
-        this.config = config;
+public class RedirectListener implements Listener {
+    private final Supplier<CommandRedirectConfig> configSupplier;
+
+    public RedirectListener(Supplier<CommandRedirectConfig> configSupplier) {
+        this.configSupplier = configSupplier;
     }
 
     @EventHandler
@@ -20,6 +21,7 @@ public class RedirectListener implements Listener {
         if (!isBedrock(player)) return;
 
         String commandWithoutSlash = event.getMessage().substring(1).trim();
+        CommandRedirectConfig config = configSupplier.get();
         String replacement = config.getRedirect(commandWithoutSlash);
 
         if (replacement != null) {
