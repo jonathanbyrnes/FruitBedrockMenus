@@ -1,5 +1,6 @@
-package com.example.bedrockredirect;
+package core.craft.listener;
 
+import core.craft.config.CommandRedirectConfig;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
